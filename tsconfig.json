@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "baseUrl": ".",
+    "strict": true,
+    "noImplicitAny": true,
+    "types": ["bignumber.js", "node"]
+  },
+  "include": [
+    "scripts/**/*.ts",
+    "./*"
+  ]
+}
