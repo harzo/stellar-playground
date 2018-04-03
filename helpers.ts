@@ -4,16 +4,14 @@ import * as StellarSdk from 'stellar-sdk';
 export function getTestServer() {
   StellarSdk.Network.useTestNetwork();
 
-  return new StellarSdk.Server(
-    'https://horizon-testnet.stellar.org'
-  );
+  return new StellarSdk.Server('https://horizon-testnet.stellar.org');
 }
 
 export function createKeypair() {
   return StellarSdk.Keypair.random();
 }
 
-function fetchFirendBot(publicKey: string){
+function fetchFirendBot(publicKey: string) {
   const endpoint = 'https://friendbot.stellar.org';
 
   return fetch(endpoint + '?addr=' + publicKey)
@@ -24,12 +22,13 @@ function fetchFirendBot(publicKey: string){
 }
 
 export function fundTestAccount(publicKey: string) {
-  fetchFirendBot(publicKey)
-    .then(response => {
-      console.log(response);
-    });
+  fetchFirendBot(publicKey).then(response => {
+    console.log(response);
+  });
 }
 
-export function getAccountInfo(server: StellarSdk.Server) {
-
+export async function getAccountInfo(server: any, publicKey: string) {
+  return server.loadAccount(publicKey).then((result: any) => {
+    return result;
+  });
 }

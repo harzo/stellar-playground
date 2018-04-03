@@ -1,4 +1,4 @@
-import * as fs from 'fs'
+import * as fs from 'fs';
 import { createKeypair } from '../helpers';
 
 const pair = createKeypair();
@@ -16,7 +16,6 @@ try {
   fs.writeFile('./keypairs/' + filename, data, () => {
     console.log(`'keypair' saved in keypairs/` + filename);
   });
-}
-catch {
+} catch {
   console.log('! Error during keypair file generation');
 }

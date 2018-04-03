@@ -1,4 +1,4 @@
-import { argv } from 'yargs'
+import { argv } from 'yargs';
 import { fundTestAccount } from '../helpers';
 
 if (!argv.id || argv.id === '') {
